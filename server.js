@@ -5,14 +5,9 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(express.json());
 
-// Simple GET API endpoint
-app.get('/api/users', (req, res) => {
-  const users = [
-    { id: 1, name: 'Rishi Tiwari', email: 'rishi@example.com' },
-    { id: 2, name: 'Gaurav Bajpaye', email: 'gaurav@example.com' }
-  ];
-  res.json({ success: true, data: users });
-});
+// Users routes
+const usersRouter = require('./routes/users');
+app.use('/api/users', usersRouter);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
