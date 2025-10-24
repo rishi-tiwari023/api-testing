@@ -17,5 +17,7 @@ npm start          # Run server (port 3000)
 ```
 
 ## API Endpoints
-- `GET /api/users` - Returns user list
+- `GET /api/users` - Returns all users
+- `GET /api/users/admin` - Returns all admin users
+- `GET /api/users/:id` - Returns specific user by ID
 - `GET /api/health` - Health check
