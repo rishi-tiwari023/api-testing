@@ -1,10 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const { getAllUsers, getUserById } = require('../data/users');
+const { getAllUsers, getUserById, getAdmin } = require('../data/users');
 
 // GET /api/users
 router.get('/', (req, res) => {
   res.json({ success: true, data: getAllUsers() });
+});
+
+// GET /api/users/admin
+router.get('/admin', (req, res) => {
+  res.json({ success: true, data: getAdmin() });
 });
 
 // GET /api/users/:id
